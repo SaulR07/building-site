@@ -1,0 +1,225 @@
+---
+export interface props {
+	title: string;
+	speech: string;
+}
+
+const {title, speech} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{title}</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="wrapper__one border">
+				<div class="wrapperOne__title">
+					<h1>Sitio web en construcci&oacute;n</h1>
+					<div class="wrapperOne__image">
+						<image src="/public/images/image.png" alt="Construcción" />
+					</div>
+					<!-- image class="one-wave" src="/images/wave-desktop.svg" /-->
+				</div>
+			</div>
+			<div class="wrapper__two border">
+				<div class="wrapperTwo__speech">
+					<div class="wrapperTwo__text">
+						<h3>¡Hola!</h3>
+						<p>
+							Gracias por pasarte por aquí, Estamos emocionados de que hayas visitado nuestro sitio web. Nos encontramos
+							trabajando arduamente para construir la mejor versión de nuestra página web.
+						</p>
+						<p>
+							A pesar de que todavía estamos trabajando en ella, queremos hacerte saber que estamos listos para recibir tus
+							pedidos y brindarte un servicio excepcional.
+						</p>
+						<p>Así que, no dudes en contactarnos si tienes alguna pregunta o deseas hacer un pedido.</p>
+						<h2>Contactanos:</h2>
+					</div>
+					<div class="wrapperTwo__icons">
+						<div class="wrapperIcons">
+							<div class="wrapperIcons__content1">
+								<a href="https://wa.me/5571953604">
+									<img src="/public/images/whatsAppIco.svg" alt="Contactanos por WhatsApp" class="wrapperTwo__icon icon--up" />
+								</a>
+								<a href="tel:+525571953604">
+									<img src="/public/images/telefonoIco.svg" alt="Contactanos por telefono" class="wrapperTwo__icon icon--down" />
+								</a>
+							</div>
+							<div class="wrapperIcons__content2">
+								<a href="http://m.me/decoracionescasaflores">
+									<img
+										src="/public/images/mesengerIco.svg"
+										alt="Contactanos por Messenger de Facebook"
+										class="wrapperTwo__icon icon--up"
+									/>
+								</a>
+								<a
+									href="mailto:contacto@casafloresdecoraciones.com?subject=Consultas%20decaroación&body=Deseo%20información%20sobre%20las%20decoraciones"
+								>
+									<img
+										src="/public/images/correoIco.svg"
+										alt="Contactanos por correo electrónico"
+										class="wrapperTwo__icon icon--down"
+									/>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<style is:global>
+		html {
+			height: 100%;
+			margin: 0;
+			background: linear-gradient(180deg, rgba(242, 219, 12, 0.18) 0%, #f2db0c 98.55%);
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+		}
+
+		.wrapper {
+			height: 100vh;
+			display: grid;
+			gap: 5px;
+			grid-auto-rows: minmax(auto, auto);
+			grid-template-columns: repeat(1, 1fr);
+		}
+
+		.wrapper__one {
+			grid-column: 1;
+			grid-row: 1;
+
+			display: flex;
+			justify-content: center;
+		}
+
+		.wrapperOne__title {
+			display: flex;
+			text-align: center;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+
+			width: min-content;
+			height: 100%;
+		}
+
+		.one-wave {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		.wrapper__one h1 {
+			font-family: "Inter";
+			font-style: normal;
+			font-weight: 800;
+			font-size: calc(4em + 1vw);
+
+			color: #fb661d;
+			text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		}
+
+		.wrapper__two {
+			grid-column: 1;
+			grid-row: 2;
+
+			display: flex;
+			justify-content: center;
+		}
+
+		.wrapperTwo__speech {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			margin-left: 10%;
+			margin-right: 10%;
+
+			height: 100%;
+		}
+
+		.wrapperTwo__text {
+			font-family: "Inter";
+			font-style: normal;
+			font-weight: 400;
+			font-size: 1.5em;
+
+			color: #04438c;
+		}
+
+		.wrapperTwo__icon {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+
+		.icon--up {
+			margin-bottom: 20px;
+		}
+
+		.icon--down {
+			margin-top: 20px;
+		}
+
+		.wrapperIcons {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		.wrapperIcons__content1 {
+			grid-column: 1;
+			grid-row: 1;
+		}
+
+		.wrapperIcons__content2 {
+			grid-column: 2;
+			grid-row: 1;
+		}
+
+		p {
+			text-align: justify;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		@media (min-width: 768px) {
+			html {
+				background: linear-gradient(270.13deg, #f2db0c 0.13%, rgba(242, 219, 12, 0.43) 99.9%);
+			}
+
+			.wrapper {
+				grid-template-columns: repeat(2, 1fr);
+			}
+
+			.wrapper__one {
+				grid-column: 1;
+				grid-row: 1;
+			}
+
+			.wrapper__two {
+				grid-column: 2;
+				grid-row: 1;
+			}
+
+			.wrapperTwo__speech {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+				margin-left: 20%;
+				margin-right: 20%;
+
+				height: 100%;
+			}
+		}
+	</style>
+</html>
